@@ -1,0 +1,46 @@
+
+#decler the variable 
+CC=g++
+
+CFLAG=-c -wall
+
+ all: hello
+	
+
+hello: main.o fun1.o fun2.o
+	$(CC) main.o fun1.o fun2.o -o hello
+main.o: main.cpp
+	$(CC) $(CFLAG) main.cpp
+fun1.o: fun1.cpp
+	$(CC) $(CFLAG) fun1.cpp
+fun2.o: fun2.cpp
+	$(CC) $(CFLAG) fun2.cpp
+clean:
+	rm -rf *o hello
+
+
+
+
+
+
+
+
+
+
+
+
+
+#this target will compile all the files
+# all: hello
+	
+
+#hello: main.o fun1.o fun2.o
+	g++ main.o fun1.o fun2.o -o hello
+#main.o: main.cpp
+	g++ -c main.cpp
+#fun1.o: fun1.cpp
+	g++ -c fun1.cpp
+#fun2.o: fun2.cpp
+	g++ -c fun2.cpp
+#clean:
+	rm -rf *o hello
